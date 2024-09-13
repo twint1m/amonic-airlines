@@ -1,0 +1,114 @@
+[
+  {
+    "model": "amonic.user",
+    "pk": 1,
+    "fields": {
+      "role": 1,
+      "email": "j.doe@amonic.com",
+      "password": "123",
+      "first_name": "John",
+      "last_name": "Doe",
+      "office": null,
+      "birthdate": "1983-01-13",
+      "active": true
+    }
+  },
+  {
+    "model": "amonic.user",
+    "pk": 2,
+    "fields": {
+      "role": 2,
+      "email": "k.omar@amonic.com",
+      "password": "4258",
+      "first_name": "Karim",
+      "last_name": "Omar",
+      "office": null,
+      "birthdate": "1980-03-19",
+      "active": true
+    }
+  },
+  {
+    "model": "amonic.user",
+    "pk": 3,
+    "fields": {
+      "role": 2,
+      "email": "h.saeed@amonic.com",
+      "password": "2020",
+      "first_name": "Hannan",
+      "last_name": "Saeed",
+      "office": null,
+      "birthdate": "1989-12-20",
+      "active": true
+    }
+  },
+  {
+    "model": "amonic.user",
+    "pk": 4,
+    "fields": {
+      "role": 2,
+      "email": "a.hobart@amonic.com",
+      "password": "6996",
+      "first_name": "Andrew",
+      "last_name": "Hobart",
+      "office": null,
+      "birthdate": "1990-01-30",
+      "active": true
+    }
+  },
+  {
+    "model": "amonic.user",
+    "pk": 5,
+    "fields": {
+      "role": 2,
+      "email": "k.anderson@amonic.com",
+      "password": "4570",
+      "first_name": "Katrin",
+      "last_name": "Anderson",
+      "office": null,
+      "birthdate": "1992-11-10",
+      "active": true
+    }
+  },
+  {
+    "model": "amonic.user",
+    "pk": 6,
+    "fields": {
+      "role": 2,
+      "email": "h.wyrick@amonic.com",
+      "password": "1199",
+      "first_name": "Hava",
+      "last_name": "Wyrick",
+      "office": null,
+      "birthdate": "1988-08-08",
+      "active": true
+    }
+  },
+  {
+    "model": "amonic.user",
+    "pk": 7,
+    "fields": {
+      "role": 2,
+      "email": "marie.horn@amonic.com",
+      "password": "55555",
+      "first_name": "Marie",
+      "last_name": "Horn",
+      "office": null,
+      "birthdate": "1981-04-06",
+      "active": true
+    }
+  },
+  {
+    "model": "amonic.user",
+    "pk": 8,
+    "fields": {
+      "role": 2,
+      "email": "m.osteen@amonic.com",
+      "password": "9800",
+      "first_name": "Milagros",
+      "last_name": "Osteen",
+      "office": null,
+      "birthdate": "1991-02-03",
+      "active": false
+    }
+  }
+]

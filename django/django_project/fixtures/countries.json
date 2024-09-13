@@ -1,0 +1,1374 @@
+[
+  {
+    "model": "amonic.country",
+    "pk": 1,
+    "fields": {
+      "name": "Afghanistan"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 2,
+    "fields": {
+      "name": "Albania"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 3,
+    "fields": {
+      "name": "Algeria"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 4,
+    "fields": {
+      "name": "Andorra"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 5,
+    "fields": {
+      "name": "Angola"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 6,
+    "fields": {
+      "name": "Antigua & Deps"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 7,
+    "fields": {
+      "name": "Argentina"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 8,
+    "fields": {
+      "name": "Armenia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 9,
+    "fields": {
+      "name": "Australia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 10,
+    "fields": {
+      "name": "Austria"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 11,
+    "fields": {
+      "name": "Azerbaijan"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 12,
+    "fields": {
+      "name": "Bahamas"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 13,
+    "fields": {
+      "name": "Bahrain"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 14,
+    "fields": {
+      "name": "Bangladesh"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 15,
+    "fields": {
+      "name": "Barbados"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 16,
+    "fields": {
+      "name": "Belarus"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 17,
+    "fields": {
+      "name": "Belgium"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 18,
+    "fields": {
+      "name": "Belize"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 19,
+    "fields": {
+      "name": "Benin"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 20,
+    "fields": {
+      "name": "Bhutan"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 21,
+    "fields": {
+      "name": "Bolivia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 22,
+    "fields": {
+      "name": "Bosnia Herzegovina"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 23,
+    "fields": {
+      "name": "Botswana"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 24,
+    "fields": {
+      "name": "Brazil"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 25,
+    "fields": {
+      "name": "Brunei"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 26,
+    "fields": {
+      "name": "Bulgaria"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 27,
+    "fields": {
+      "name": "Burkina"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 28,
+    "fields": {
+      "name": "Burundi"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 29,
+    "fields": {
+      "name": "Cambodia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 30,
+    "fields": {
+      "name": "Cameroon"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 31,
+    "fields": {
+      "name": "Canada"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 32,
+    "fields": {
+      "name": "Cape Verde"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 33,
+    "fields": {
+      "name": "Central African Rep"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 34,
+    "fields": {
+      "name": "Chad"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 35,
+    "fields": {
+      "name": "Chile"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 36,
+    "fields": {
+      "name": "China"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 37,
+    "fields": {
+      "name": "Colombia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 38,
+    "fields": {
+      "name": "Comoros"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 39,
+    "fields": {
+      "name": "Congo"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 40,
+    "fields": {
+      "name": "Congo {Democratic Rep}"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 41,
+    "fields": {
+      "name": "Costa Rica"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 42,
+    "fields": {
+      "name": "Croatia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 43,
+    "fields": {
+      "name": "Cuba"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 44,
+    "fields": {
+      "name": "Cyprus"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 45,
+    "fields": {
+      "name": "Czech Republic"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 46,
+    "fields": {
+      "name": "Denmark"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 47,
+    "fields": {
+      "name": "Djibouti"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 48,
+    "fields": {
+      "name": "Dominica"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 49,
+    "fields": {
+      "name": "Dominican Republic"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 50,
+    "fields": {
+      "name": "East Timor"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 51,
+    "fields": {
+      "name": "Ecuador"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 52,
+    "fields": {
+      "name": "Egypt"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 53,
+    "fields": {
+      "name": "El Salvador"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 54,
+    "fields": {
+      "name": "Equatorial Guinea"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 55,
+    "fields": {
+      "name": "Eritrea"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 56,
+    "fields": {
+      "name": "Estonia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 57,
+    "fields": {
+      "name": "Ethiopia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 58,
+    "fields": {
+      "name": "Fiji"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 59,
+    "fields": {
+      "name": "Finland"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 60,
+    "fields": {
+      "name": "France"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 61,
+    "fields": {
+      "name": "Gabon"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 62,
+    "fields": {
+      "name": "Gambia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 63,
+    "fields": {
+      "name": "Georgia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 64,
+    "fields": {
+      "name": "Germany"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 65,
+    "fields": {
+      "name": "Ghana"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 66,
+    "fields": {
+      "name": "Greece"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 67,
+    "fields": {
+      "name": "Grenada"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 68,
+    "fields": {
+      "name": "Guatemala"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 69,
+    "fields": {
+      "name": "Guinea"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 70,
+    "fields": {
+      "name": "Guinea-Bissau"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 71,
+    "fields": {
+      "name": "Guyana"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 72,
+    "fields": {
+      "name": "Haiti"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 73,
+    "fields": {
+      "name": "Honduras"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 74,
+    "fields": {
+      "name": "Hungary"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 75,
+    "fields": {
+      "name": "Iceland"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 76,
+    "fields": {
+      "name": "India"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 77,
+    "fields": {
+      "name": "Indonesia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 78,
+    "fields": {
+      "name": "Iran"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 79,
+    "fields": {
+      "name": "Iraq"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 80,
+    "fields": {
+      "name": "Ireland {Republic}"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 81,
+    "fields": {
+      "name": "Israel"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 82,
+    "fields": {
+      "name": "Italy"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 83,
+    "fields": {
+      "name": "Ivory Coast"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 84,
+    "fields": {
+      "name": "Jamaica"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 85,
+    "fields": {
+      "name": "Japan"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 86,
+    "fields": {
+      "name": "Jordan"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 87,
+    "fields": {
+      "name": "Kazakhstan"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 88,
+    "fields": {
+      "name": "Kenya"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 89,
+    "fields": {
+      "name": "Kiribati"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 90,
+    "fields": {
+      "name": "Korea North"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 91,
+    "fields": {
+      "name": "Korea South"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 92,
+    "fields": {
+      "name": "Kosovo"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 93,
+    "fields": {
+      "name": "Kuwait"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 94,
+    "fields": {
+      "name": "Kyrgyzstan"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 95,
+    "fields": {
+      "name": "Laos"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 96,
+    "fields": {
+      "name": "Latvia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 97,
+    "fields": {
+      "name": "Lebanon"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 98,
+    "fields": {
+      "name": "Lesotho"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 99,
+    "fields": {
+      "name": "Liberia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 100,
+    "fields": {
+      "name": "Libya"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 101,
+    "fields": {
+      "name": "Liechtenstein"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 102,
+    "fields": {
+      "name": "Lithuania"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 103,
+    "fields": {
+      "name": "Luxembourg"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 104,
+    "fields": {
+      "name": "Macedonia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 105,
+    "fields": {
+      "name": "Madagascar"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 106,
+    "fields": {
+      "name": "Malawi"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 107,
+    "fields": {
+      "name": "Malaysia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 108,
+    "fields": {
+      "name": "Maldives"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 109,
+    "fields": {
+      "name": "Mali"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 110,
+    "fields": {
+      "name": "Malta"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 111,
+    "fields": {
+      "name": "Marshall Islands"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 112,
+    "fields": {
+      "name": "Mauritania"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 113,
+    "fields": {
+      "name": "Mauritius"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 114,
+    "fields": {
+      "name": "Mexico"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 115,
+    "fields": {
+      "name": "Micronesia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 116,
+    "fields": {
+      "name": "Moldova"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 117,
+    "fields": {
+      "name": "Monaco"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 118,
+    "fields": {
+      "name": "Mongolia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 119,
+    "fields": {
+      "name": "Montenegro"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 120,
+    "fields": {
+      "name": "Morocco"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 121,
+    "fields": {
+      "name": "Mozambique"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 122,
+    "fields": {
+      "name": "Myanmar"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 123,
+    "fields": {
+      "name": "Namibia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 124,
+    "fields": {
+      "name": "Nauru"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 125,
+    "fields": {
+      "name": "Nepal"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 126,
+    "fields": {
+      "name": "Netherlands"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 127,
+    "fields": {
+      "name": "New Zealand"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 128,
+    "fields": {
+      "name": "Nicaragua"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 129,
+    "fields": {
+      "name": "Niger"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 130,
+    "fields": {
+      "name": "Nigeria"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 131,
+    "fields": {
+      "name": "Norway"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 132,
+    "fields": {
+      "name": "Oman"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 133,
+    "fields": {
+      "name": "Pakistan"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 134,
+    "fields": {
+      "name": "Palau"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 135,
+    "fields": {
+      "name": "Panama"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 136,
+    "fields": {
+      "name": "Papua New Guinea"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 137,
+    "fields": {
+      "name": "Paraguay"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 138,
+    "fields": {
+      "name": "Peru"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 139,
+    "fields": {
+      "name": "Philippines"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 140,
+    "fields": {
+      "name": "Poland"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 141,
+    "fields": {
+      "name": "Portugal"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 142,
+    "fields": {
+      "name": "Qatar"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 143,
+    "fields": {
+      "name": "Romania"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 144,
+    "fields": {
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 145,
+    "fields": {
+      "name": "Rwanda"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 146,
+    "fields": {
+      "name": "St Kitts & Nevis"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 147,
+    "fields": {
+      "name": "St Lucia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 148,
+    "fields": {
+      "name": "Saint Vincent & the Grenadines"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 149,
+    "fields": {
+      "name": "Samoa"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 150,
+    "fields": {
+      "name": "San Marino"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 151,
+    "fields": {
+      "name": "Sao Tome & Principe"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 152,
+    "fields": {
+      "name": "Saudi Arabia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 153,
+    "fields": {
+      "name": "Senegal"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 154,
+    "fields": {
+      "name": "Serbia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 155,
+    "fields": {
+      "name": "Seychelles"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 156,
+    "fields": {
+      "name": "Sierra Leone"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 157,
+    "fields": {
+      "name": "Singapore"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 158,
+    "fields": {
+      "name": "Slovakia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 159,
+    "fields": {
+      "name": "Slovenia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 160,
+    "fields": {
+      "name": "Solomon Islands"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 161,
+    "fields": {
+      "name": "Somalia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 162,
+    "fields": {
+      "name": "South Africa"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 163,
+    "fields": {
+      "name": "South Sudan"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 164,
+    "fields": {
+      "name": "Spain"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 165,
+    "fields": {
+      "name": "Sri Lanka"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 166,
+    "fields": {
+      "name": "Sudan"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 167,
+    "fields": {
+      "name": "Suriname"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 168,
+    "fields": {
+      "name": "Swaziland"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 169,
+    "fields": {
+      "name": "Sweden"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 170,
+    "fields": {
+      "name": "Switzerland"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 171,
+    "fields": {
+      "name": "Syria"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 172,
+    "fields": {
+      "name": "Taiwan"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 173,
+    "fields": {
+      "name": "Tajikistan"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 174,
+    "fields": {
+      "name": "Tanzania"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 175,
+    "fields": {
+      "name": "Thailand"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 176,
+    "fields": {
+      "name": "Togo"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 177,
+    "fields": {
+      "name": "Tonga"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 178,
+    "fields": {
+      "name": "Trinidad & Tobago"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 179,
+    "fields": {
+      "name": "Tunisia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 180,
+    "fields": {
+      "name": "Turkey"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 181,
+    "fields": {
+      "name": "Turkmenistan"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 182,
+    "fields": {
+      "name": "Tuvalu"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 183,
+    "fields": {
+      "name": "Uganda"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 184,
+    "fields": {
+      "name": "Ukraine"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 185,
+    "fields": {
+      "name": "United Arab Emirates"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 186,
+    "fields": {
+      "name": "United Kingdom"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 187,
+    "fields": {
+      "name": "United States"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 188,
+    "fields": {
+      "name": "Uruguay"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 189,
+    "fields": {
+      "name": "Uzbekistan"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 190,
+    "fields": {
+      "name": "Vanuatu"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 191,
+    "fields": {
+      "name": "Vatican City"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 192,
+    "fields": {
+      "name": "Venezuela"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 193,
+    "fields": {
+      "name": "Vietnam"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 194,
+    "fields": {
+      "name": "Yemen"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 195,
+    "fields": {
+      "name": "Zambia"
+    }
+  },
+  {
+    "model": "amonic.country",
+    "pk": 196,
+    "fields": {
+      "name": "Zimbabwe"
+    }
+  }
+]
