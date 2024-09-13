@@ -1,0 +1,4 @@
+[
+  {"model": "amonic.role", "pk": 1, "fields": {"title": "Administrator"}},
+  {"model": "amonic.role", "pk": 2, "fields": {"title": "User"}}
+]

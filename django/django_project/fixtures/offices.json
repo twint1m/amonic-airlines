@@ -1,0 +1,52 @@
+[
+  {
+    "model": "amonic.office",
+    "pk": 1,
+    "fields": {
+      "country": 185,
+      "title": "Abu dhabi",
+      "phone": "638-757-8582",
+      "contact": "MIchael Malki"
+    }
+  },
+  {
+    "model": "amonic.office",
+    "pk": 3,
+    "fields": {
+      "country": 52,
+      "title": "Cairo",
+      "phone": "252-224-8525",
+      "contact": "David Johns"
+    }
+  },
+  {
+    "model": "amonic.office",
+    "pk": 4,
+    "fields": {
+      "country": 13,
+      "title": "Bahrain",
+      "phone": "542-227-5825",
+      "contact": "Katie Ballmer"
+    }
+  },
+  {
+    "model": "amonic.office",
+    "pk": 5,
+    "fields": {
+      "country": 142,
+      "title": "Doha",
+      "phone": "758-278-9597",
+      "contact": "Ariel Levy"
+    }
+  },
+  {
+    "model": "amonic.office",
+    "pk": 6,
+    "fields": {
+      "country": 152,
+      "title": "Riyadh",
+      "phone": "285-285-1474",
+      "contact": "Andrew Hobart"
+    }
+  }
+]
