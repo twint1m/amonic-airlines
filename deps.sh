@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Устанавливаю зависимости..."
+echo "Установка зависимостей..."
 
 cd django
 pip install -r requirements.txt
