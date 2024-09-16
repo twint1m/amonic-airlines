@@ -10,7 +10,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
-    "@toolpad/core": "latest",
+    "@toolpad/core": "^0.5.2",
     "@types/invariant": "latest",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
@@ -20,7 +20,7 @@
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "^6.26.2",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^3.0.1",
     "typescript": "latest",
     "web-vitals": "^2.1.0"
   },
