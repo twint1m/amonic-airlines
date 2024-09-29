@@ -1,6 +1,6 @@
 import React from "react";
 import Input from '../../ui/Input'
-import Select from '../../ui/Select'
+import {Select} from '../../ui/Select'
 import {styled} from "@mui/system";
 import Button from '../../ui/Buttons/BlueButton'
 import RadioButton from '../../ui/Radio'

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth import login as auth_login
 from django.http import JsonResponse
-from .models import User
+from .models import User, Role
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -9,8 +9,10 @@ from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response
-from .models import User
 from .serializers import UserSerializer
+from rest_framework import generics
+from .serializers import UserCreateSerializer
+from rest_framework.permissions import IsAuthenticated
 
 FAILED_ATTEMPTS_LIMIT = 3
 BLOCK_TIME = 10
@@ -67,8 +69,6 @@ def get_users(request):
     serializer = UserSerializer(users, many=True)
     return Response(serializer.data)
 
-
-
 @api_view(['PATCH'])
 def toggle_user_active(request, user_id):
     try:
@@ -84,8 +84,34 @@ def change_user_role(request, user_id):
     try:
         user = User.objects.get(id=user_id)
         new_role = request.data.get('role')
-        user.role_id = new_role
-        user.save()
-        return Response({'status': 'success', 'role': user.role.name}, status=status.HTTP_200_OK)
+
+        try:
+            role = Role.objects.get(id=new_role)
+            user.role = role
+            user.save()
+            return Response({'status': 'success', 'role': user.role.title}, status=status.HTTP_200_OK)
+        except Role.DoesNotExist:
+            return Response({'error': 'Role not found'}, status=status.HTTP_400_BAD_REQUEST)
+
     except User.DoesNotExist:
         return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+
+
+class UserCreateView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserCreateSerializer
+    permission_classes = [IsAuthenticated]
+
+
+
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from .models import Office
+from .serializers import OfficeSerializer
+
+class OfficeListView(APIView):
+    def get(self, request):
+        offices = Office.objects.all()
+        serializer = OfficeSerializer(offices, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

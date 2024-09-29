@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { styled } from "@mui/system";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const StyledTable = styled('table')({
     width: '100%',
@@ -31,7 +32,8 @@ const UsersTable: React.FC = () => {
     const [selectedOffice, setSelectedOffice] = useState<string>("All offices");
     const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
     const [offices, setOffices] = useState<string[]>([]);
-    const [refresh, setRefresh] = useState<boolean>(false); // Добавлен новый state для перезапроса
+    const [refresh, setRefresh] = useState<boolean>(false);
+    const navigate = useNavigate(); // Инициализируем useNavigate
 
     useEffect(() => {
         const fetchUsers = async () => {
@@ -60,7 +62,7 @@ const UsersTable: React.FC = () => {
         };
 
         fetchUsers();
-    }, [refresh]); // Обновление данных при изменении refresh
+    }, [refresh]);
 
     useEffect(() => {
         const fetchUsers = async () => {
@@ -122,7 +124,7 @@ const UsersTable: React.FC = () => {
                 },
             });
 
-            setRefresh(prev => !prev); // Переключаем refresh для обновления данных
+            setRefresh(prev => !prev);
         } catch (error) {
             console.error("Error toggling role:", error);
         }
@@ -152,7 +154,7 @@ const UsersTable: React.FC = () => {
                 },
             });
 
-            setRefresh(prev => !prev); // Переключаем refresh для обновления данных
+            setRefresh(prev => !prev);
         } catch (error) {
             console.error("Error toggling active status:", error);
         }
@@ -177,6 +179,7 @@ const UsersTable: React.FC = () => {
                         </option>
                     ))}
                 </select>
+                <button onClick={() => navigate('/users/add')}>Add User</button> {/* Кнопка для добавления пользователя */}
             </div>
 
             <StyledTable>

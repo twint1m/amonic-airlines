@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User
+from .models import User, Office
 from datetime import date
 
 class UserSerializer(serializers.ModelSerializer):
@@ -16,3 +16,23 @@ class UserSerializer(serializers.ModelSerializer):
             today = date.today()
             return today.year - obj.birthdate.year - ((today.month, today.day) < (obj.birthdate.month, obj.birthdate.day))
         return None
+
+
+class UserCreateSerializer(UserSerializer):
+    password = serializers.CharField(write_only=True)
+
+    class Meta(UserSerializer.Meta):
+        fields = UserSerializer.Meta.fields + ['password']
+
+    def create(self, validated_data):
+        password = validated_data.pop('password')
+        user = User(**validated_data)
+        user.set_password(password)
+        user.save()
+        return user
+
+
+class OfficeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Office
+        fields = ['id', 'title', 'phone', 'contact']
