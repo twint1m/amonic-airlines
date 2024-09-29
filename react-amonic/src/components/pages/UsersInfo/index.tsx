@@ -1,43 +1,64 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "@mui/system";
+import axios from "axios";
 
-// Определяем стили для таблицы
 const StyledTable = styled('table')({
     width: '100%',
     borderCollapse: 'collapse',
     fontFamily: 'Arial, sans-serif',
     marginBottom: '20px',
-
     'th, td': {
         border: '1px solid #ddd',
         padding: '8px',
         textAlign: 'left',
     },
-
     'th': {
         backgroundColor: '#f2f2f2',
         fontWeight: 'bold',
     },
-
     '.active': {
-        backgroundColor: '#dff0d8', // Зелёный фон для активных
+        backgroundColor: '#dff0d8',
     },
-
     '.inactive': {
-        backgroundColor: '#f2dede', // Красный фон для неактивных
+        backgroundColor: '#f2dede',
     }
 });
 
-const users = [
-    { name: "Peter", lastName: "Severin", age: 40, role: "administrator", email: "peter.s@yahoo.com", office: "Abu Dhabi", active: true },
-    { name: "Henri", lastName: "Kerasha", age: 24, role: "user", email: "severin2007@gmail.com", office: "Abu Dhabi", active: true },
-    { name: "Olga", lastName: "Navin", age: 65, role: "user", email: "olga.olga@gmail.com", office: "Bahrain", active: true },
-    { name: "Henri", lastName: "Morf", age: 34, role: "administrator", email: "h.morg@amonic.com", office: "Doha", active: true },
-    { name: "Mahan", lastName: "Aliof", age: 45, role: "user", email: "aliof1985@gmail.com", office: "Bahrain", active: false },
-    { name: "Iraj", lastName: "Asadi", age: 37, role: "administrator", email: "asadi.irajj@amonic.com", office: "Doha", active: false }
-];
-
 const UsersTable: React.FC = () => {
+    const [users, setUsers] = useState<any[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                const token = localStorage.getItem('token');
+
+                const response = await axios.get('http://127.0.0.1:8000/api/users/', {
+                    headers: {
+                        'Authorization': `Token ${token}`,
+                    },
+                });
+
+                setUsers(response.data);
+                setLoading(false);
+            } catch (err) {
+                setError("Failed to fetch users");
+                setLoading(false);
+            }
+        };
+
+        fetchUsers();
+    }, []);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>{error}</div>;
+    }
+
     return (
         <>
             <div>
@@ -64,8 +85,8 @@ const UsersTable: React.FC = () => {
                 <tbody>
                 {users.map((user, index) => (
                     <tr key={index} className={user.active ? 'active' : 'inactive'}>
-                        <td>{user.name}</td>
-                        <td>{user.lastName}</td>
+                        <td>{user.first_name}</td>
+                        <td>{user.last_name}</td>
                         <td>{user.age}</td>
                         <td>{user.role}</td>
                         <td>{user.email}</td>

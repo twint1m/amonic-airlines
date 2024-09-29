@@ -16,7 +16,12 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from amonic.views import custom_login, get_users
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('login/', custom_login, name='custom_login'),
+    path('api/users/', get_users, name='get_users'),
+    path('api/token/', obtain_auth_token, name='api_token_auth'),
 ]

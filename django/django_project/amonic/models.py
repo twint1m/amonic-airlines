@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import make_password, check_password
 
 class Country(models.Model):
     name = models.CharField(max_length=50)
@@ -37,6 +37,7 @@ class User(models.Model):
     office = models.ForeignKey(Office, null=True, blank=True, on_delete=models.SET_NULL)
     birthdate = models.DateField(null=True, blank=True)
     active = models.BooleanField(default=True)
+    last_login = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return self.email
@@ -45,6 +46,16 @@ class User(models.Model):
         if not self.password.startswith('md5$'):
             self.password = make_password(self.password, hasher='md5')
         super().save(*args, **kwargs)
+
+    def check_password(self, raw_password):
+        return check_password(raw_password, self.password)
+
+        @property
+        def is_active(self):
+            return self.active
+
+
+
 
 
 
