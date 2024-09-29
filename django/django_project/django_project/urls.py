@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from amonic.views import custom_login, get_users
+from amonic.views import custom_login, get_users, toggle_user_active, change_user_role
 from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
@@ -24,4 +24,8 @@ urlpatterns = [
     path('login/', custom_login, name='custom_login'),
     path('api/users/', get_users, name='get_users'),
     path('api/token/', obtain_auth_token, name='api_token_auth'),
+    path('api/users/<int:user_id>/toggle-active/', toggle_user_active, name='toggle_user_active'),
+    path('api/users/<int:user_id>/change-role/', change_user_role, name='change_user_role'),
 ]
+
+

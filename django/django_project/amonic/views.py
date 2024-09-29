@@ -7,7 +7,9 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view
+from rest_framework import status
 from rest_framework.response import Response
+from .models import User
 from .serializers import UserSerializer
 
 FAILED_ATTEMPTS_LIMIT = 3
@@ -64,3 +66,26 @@ def get_users(request):
     users = User.objects.all()
     serializer = UserSerializer(users, many=True)
     return Response(serializer.data)
+
+
+
+@api_view(['PATCH'])
+def toggle_user_active(request, user_id):
+    try:
+        user = User.objects.get(id=user_id)
+        user.active = not user.active
+        user.save()
+        return Response({'status': 'success', 'active': user.active}, status=status.HTTP_200_OK)
+    except User.DoesNotExist:
+        return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['PATCH'])
+def change_user_role(request, user_id):
+    try:
+        user = User.objects.get(id=user_id)
+        new_role = request.data.get('role')
+        user.role_id = new_role
+        user.save()
+        return Response({'status': 'success', 'role': user.role.name}, status=status.HTTP_200_OK)
+    except User.DoesNotExist:
+        return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)

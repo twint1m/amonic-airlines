@@ -4,10 +4,12 @@ from datetime import date
 
 class UserSerializer(serializers.ModelSerializer):
     age = serializers.SerializerMethodField()
+    office = serializers.CharField(source='office.title', allow_null=True)
+    role = serializers.CharField(source='role.title')
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'office', 'role', 'active', 'birthdate', 'age']
+        fields = ['id', 'first_name', 'last_name', 'email', 'office', 'role', 'active', 'birthdate', 'age']
 
     def get_age(self, obj):
         if obj.birthdate:
