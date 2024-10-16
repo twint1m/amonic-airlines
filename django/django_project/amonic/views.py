@@ -27,6 +27,20 @@ from .models import Office
 from .serializers import OfficeSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import AllowAny
+from rest_framework import generics
+from .models import User
+from .serializers import UserCreateSerializer
+from rest_framework import generics
+from rest_framework.response import Response
+from rest_framework import status
+from .models import User, Role
+from .serializers import UserSerializer
+from rest_framework import generics
+from rest_framework.response import Response
+from rest_framework import status
+from .models import User, Role
+from .serializers import UserSerializer
 
 FAILED_ATTEMPTS_LIMIT = 3
 BLOCK_TIME = 10
@@ -98,7 +112,26 @@ def change_user_role(request, user_id):
 
 class UserCreateView(generics.CreateAPIView):
     queryset = User.objects.all()
-    serializer_class = UserCreateSerializer
+    serializer_class = UserSerializer
+
+    def create(self, request, *args, **kwargs):
+        role_title = request.data.get('role', 'User')  # Установка роли по умолчанию
+        try:
+            role = Role.objects.get(title=role_title)
+        except Role.DoesNotExist:
+            return Response({"error": "Role not found"}, status=status.HTTP_400_BAD_REQUEST)
+
+        user_data = request.data.copy()
+        user_data['role'] = role  # Присваиваем экземпляр роли
+
+        serializer = self.get_serializer(data=user_data)
+        if not serializer.is_valid():
+            print(serializer.errors)  # Логируем ошибки
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        self.perform_create(serializer)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
 
 
 
