@@ -15,10 +15,7 @@ const providers: CustomAuthProvider[] = [
 ];
 // preview-end
 
-const signIn: (provider: ToolpadAuthProvider, formData: FormData) => void = async (
-    provider,
-    formData,
-) => {
+const signIn = async (provider, formData) => {
     const email = formData.get('email');
     const password = formData.get('password');
 
@@ -31,20 +28,19 @@ const signIn: (provider: ToolpadAuthProvider, formData: FormData) => void = asyn
             body: JSON.stringify({ email, password }),
         });
 
-        const data = await response.json();
-
         if (response.ok) {
-            const token = data.token;
-            localStorage.setItem('token', token);
+            const data = await response.json();
             window.location.href = data.redirect_url;
         } else {
-            alert(data.error || 'Invalid credentials');
+            const errorData = await response.json();
+            alert(errorData.error || 'Invalid credentials');
         }
     } catch (error) {
         console.error('Login error:', error);
         alert('Error connecting to the server');
     }
 };
+
 
 export default function CredentialsSignInPage() {
     const theme = useTheme();

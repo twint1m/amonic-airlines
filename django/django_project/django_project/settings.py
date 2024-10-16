@@ -16,6 +16,7 @@ from os import environ
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -147,8 +148,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTHENTICATION_BACKENDS = [
-    'amonic.authentication_backends.CustomUserBackend',
-    'django.contrib.auth.backends.ModelBackend',
+    'amonic.backends.EmailBackend',
+    'django.contrib.auth.backends.ModelBackend',  # Оставь стандартный бэкэнд
 ]
 
 CORS_ORIGIN_WHITELIST = [
@@ -170,9 +171,11 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-          'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.AllowAny',
     ],
 }
+
+
 
 
 

@@ -19,12 +19,7 @@ const AddUser: React.FC = () => {
     useEffect(() => {
         const fetchOffices = async () => {
             try {
-                const token = localStorage.getItem('token');
-                const response = await axios.get('http://127.0.0.1:8000/api/offices/', {
-                    headers: {
-                        'Authorization': `Token ${token}`,
-                    },
-                });
+                const response = await axios.get('http://127.0.0.1:8000/api/offices/');
                 setOffices(response.data);
             } catch (error) {
                 console.error("Ошибка при получении офисов:", error);
@@ -36,18 +31,25 @@ const AddUser: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        console.log("Submitting user data:", { email, firstName, lastName, role, birthdate, password });
+
+        // Проверка заполненности полей
+        if (!email || !firstName || !lastName || !role || !birthdate || !password) {
+            console.error("Все поля обязательны для заполнения");
+            return;
+        }
 
         const userData = { email, first_name: firstName, last_name: lastName, role, birthdate, password };
 
         try {
-            const token = localStorage.getItem('token');
-            await axios.post('http://127.0.0.1:8000/api/users/add/', userData, {
-                headers: {
-                    'Authorization': `Token ${token}`,
-                },
-            });
+            const response = await axios.post('http://127.0.0.1:8000/api/users/add/', userData);
+            console.log("Пользователь добавлен:", response.data);
         } catch (error) {
-            console.error("Ошибка при добавлении пользователя:", error);
+            if (axios.isAxiosError(error)) {
+                console.error("Ошибка при добавлении пользователя:", error.response && error.response.data || error.message);
+            } else {
+                console.error("Ошибка:", error);
+            }
         }
     };
 
