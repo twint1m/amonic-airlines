@@ -21,28 +21,50 @@ class UserSerializer(serializers.ModelSerializer):
         return None
 
 
-class UserCreateSerializer(UserSerializer):
-    password = serializers.CharField(write_only=True)
+from rest_framework import serializers
+from .models import User
 
-    class Meta(UserSerializer.Meta):
-        fields = UserSerializer.Meta.fields + ['password']
+class UserCreateSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+    role = serializers.PrimaryKeyRelatedField(queryset=Role.objects.all())
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email', 'office', 'role', 'password', 'birthdate']
 
     def create(self, validated_data):
         password = validated_data.pop('password')
-
-        role = validated_data.pop('role', None)
-        if role:
-            validated_data['role'] = Role.objects.get(id=role['id'])  # Изменено здесь
-        else:
-            # Получаем объект роли с ID = 2
-            default_role = Role.objects.get(id=2)
-            validated_data['role'] = default_role
-
-
+        role = validated_data.pop('role')  # Явно забираем роль из данных
         user = User(**validated_data)
-        user.set_password(password)
+        user.set_password(password)  # Устанавливаем пароль
+        user.role = role  # Явно устанавливаем роль
         user.save()
         return user
+
+
+
+from rest_framework import serializers
+from .models import User, Role
+
+class UserRoleAssignSerializer(serializers.ModelSerializer):
+    role = serializers.PrimaryKeyRelatedField(queryset=Role.objects.all())
+
+    class Meta:
+        model = User
+        fields = ['role']
+
+    def update(self, instance, validated_data):
+        instance.role = validated_data['role']
+        instance.save()
+        return instance
+
+
+
+
+
+
+
+
 
 
 

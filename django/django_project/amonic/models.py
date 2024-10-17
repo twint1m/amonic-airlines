@@ -42,6 +42,9 @@ class User(models.Model):
     def __str__(self):
         return self.email
 
+    def set_password(self, raw_password):
+        self.password = make_password(raw_password, hasher='md5')
+
     def save(self, *args, **kwargs):
         if not self.password.startswith('md5$'):
             self.password = make_password(self.password, hasher='md5')

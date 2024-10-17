@@ -110,28 +110,28 @@ def change_user_role(request, user_id):
         return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
 
 
-class UserCreateView(generics.CreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from .models import User
+from .serializers import UserCreateSerializer, UserRoleAssignSerializer
 
-    def create(self, request, *args, **kwargs):
-        role_title = request.data.get('role', 'User')  # Установка роли по умолчанию
-        try:
-            role = Role.objects.get(title=role_title)
-        except Role.DoesNotExist:
-            return Response({"error": "Role not found"}, status=status.HTTP_400_BAD_REQUEST)
+class UserCreateView(APIView):
+    def post(self, request):
+        user_serializer = UserCreateSerializer(data=request.data)
+        if user_serializer.is_valid():
+            user = user_serializer.save()
 
-        user_data = request.data.copy()
-        user_data['role'] = role  # Присваиваем экземпляр роли
+            # После успешного создания пользователя можно присвоить ему роль
+            if 'role' in request.data:
+                role_serializer = UserRoleAssignSerializer(user, data={'role': request.data['role']})
+                if role_serializer.is_valid():
+                    role_serializer.save()
+                else:
+                    return Response(role_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        serializer = self.get_serializer(data=user_data)
-        if not serializer.is_valid():
-            print(serializer.errors)  # Логируем ошибки
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-        self.perform_create(serializer)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
-
+            return Response(user_serializer.data, status=status.HTTP_201_CREATED)
+        return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 

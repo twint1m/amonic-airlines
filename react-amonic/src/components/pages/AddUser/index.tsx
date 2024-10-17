@@ -8,13 +8,12 @@ import {
     StyledButton,
     ButtonContainer,
     UserDetails
-} from './styles'; // Импорт стилей
+} from './styles';
 
 const AddUser: React.FC = () => {
     const [email, setEmail] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [role] = useState("2"); // Роль по умолчанию
     const [birthdate, setBirthdate] = useState("");
     const [password, setPassword] = useState("");
     const [officeId, setOfficeId] = useState("");
@@ -44,8 +43,10 @@ const AddUser: React.FC = () => {
             birthdate: birthdate,
             password: password,
             office: officeId,
-            roleId: "2"
+            role: 2,  // Устанавливаем роль по умолчанию как 2
         };
+
+        console.log("User data to submit:", userData);
 
         try {
             const response = await fetch('http://127.0.0.1:8000/api/users/add/', {
@@ -54,7 +55,7 @@ const AddUser: React.FC = () => {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 },
-                body: JSON.stringify(userData),
+                body: JSON.stringify(userData),  // Преобразуем объект в JSON
             });
 
             if (!response.ok) {
@@ -65,6 +66,7 @@ const AddUser: React.FC = () => {
             }
 
             const newUser = await response.json();
+            setNewUser(newUser);  // Сохраняем нового пользователя в состоянии
             console.log('Пользователь успешно добавлен:', newUser);
             alert('Пользователь успешно добавлен');
         } catch (error) {
@@ -72,7 +74,6 @@ const AddUser: React.FC = () => {
             alert('Произошла ошибка при добавлении пользователя');
         }
     };
-
 
     return (
         <CenteredContainer>
@@ -121,12 +122,6 @@ const AddUser: React.FC = () => {
                     <StyledButton type="button" onClick={() => {/* handle cancel */}}>Cancel</StyledButton>
                 </ButtonContainer>
             </FormContainer>
-            {newUser && (
-                <UserDetails>
-                    <h2>Новый пользователь добавлен:</h2>
-                    <pre>{JSON.stringify(newUser, null, 2)}</pre>
-                </UserDetails>
-            )}
         </CenteredContainer>
     );
 };
