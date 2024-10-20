@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { styled } from '@mui/system';
 
 const StyledTable = styled('table')({
@@ -18,43 +18,80 @@ const StyledTable = styled('table')({
         fontWeight: 'bold',
     },
 
-    '.error': {
+    'td.red': {
         backgroundColor: '#f8d7da',
         color: '#721c24',
-    }
+    },
 });
 
-const activityLogs = [
-    { date: '02/13/2017', loginTime: '17:15', logoutTime: '18:45', timeSpent: '1:30', crashReason: '' },
-    { date: '02/13/2017', loginTime: '8:25', logoutTime: '**', timeSpent: '**', crashReason: 'Power outage' },
-    { date: '02/12/2017', loginTime: '8:35', logoutTime: '18:45', timeSpent: '10:10', crashReason: '' },
-    { date: '02/11/2017', loginTime: '8:45', logoutTime: '18:30', timeSpent: '9:45', crashReason: '' },
-];
-
 const UserActivityTable: React.FC = () => {
+    const [timeSpent, setTimeSpent] = useState(0); // Время в секундах
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setTimeSpent((prevTime) => prevTime + 1);
+        }, 1000);
+
+        // Очистка таймера при размонтировании компонента
+        return () => clearInterval(timer);
+    }, []);
+
+    // Функция для форматирования времени в чч:мм:сс
+    const formatTime = (totalSeconds: number) => {
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    };
+
+    // Данные конкретного пользователя
+    const userLogins = [
+        {
+            date: '02/13/2017',
+            login_time: '8:25',
+            logout_time: '**',
+            time_spent: '**',
+            unsuccessful_logout_reason: 'Power outage',
+        },
+        {
+            date: '02/12/2017',
+            login_time: '8:35',
+            logout_time: '18:45',
+            time_spent: '10:10',
+            unsuccessful_logout_reason: '',
+        },
+        {
+            date: '02/11/2017',
+            login_time: '8:45',
+            logout_time: '18:30',
+            time_spent: '9:45',
+            unsuccessful_logout_reason: '',
+        },
+    ];
+
     return (
         <>
-            <p>Hi Henri, Welcome to AMONIC Airlines.</p>
-            <p>Time spent on system: 00:19:03 &nbsp;&nbsp;&nbsp; Number of crashes: 1</p>
+            <p>Привет, Tim, Добро пожаловать в AMONIC Airlines.</p>
+            <p>Время, проведённое в системе: {formatTime(timeSpent)} &nbsp;&nbsp;&nbsp; Количество сбоев: 0</p>
 
             <StyledTable>
                 <thead>
                 <tr>
-                    <th>Date</th>
-                    <th>Login time</th>
-                    <th>Logout time</th>
-                    <th>Time spent on system</th>
-                    <th>Unsuccessful logout reason</th>
+                    <th>Дата</th>
+                    <th>Время входа</th>
+                    <th>Время выхода</th>
+                    <th>Время в системе</th>
+                    <th>Причина неудачного выхода</th>
                 </tr>
                 </thead>
                 <tbody>
-                {activityLogs.map((log, index) => (
-                    <tr key={index} className={log.crashReason ? 'error' : ''}>
-                        <td>{log.date}</td>
-                        <td>{log.loginTime}</td>
-                        <td>{log.logoutTime}</td>
-                        <td>{log.timeSpent}</td>
-                        <td>{log.crashReason}</td>
+                {userLogins.map((login, index) => (
+                    <tr key={index} className={login.unsuccessful_logout_reason ? 'red' : ''}>
+                        <td>{login.date}</td>
+                        <td>{login.login_time}</td>
+                        <td>{login.logout_time}</td>
+                        <td>{login.time_spent}</td>
+                        <td>{login.unsuccessful_logout_reason || ''}</td>
                     </tr>
                 ))}
                 </tbody>

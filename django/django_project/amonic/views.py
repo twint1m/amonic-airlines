@@ -141,3 +141,15 @@ class OfficeListView(APIView):
         offices = Office.objects.all()
         serializer = OfficeSerializer(offices, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .models import User
+from .serializers import UserLoginSerializer
+
+class UserLoginHistoryView(APIView):
+    def get(self, request):
+        users = User.objects.all()  # Получаем всех пользователей
+        serializer = UserLoginSerializer(users, many=True)  # Сериализуем данные
+        return Response(serializer.data)

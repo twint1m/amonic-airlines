@@ -58,19 +58,14 @@ class UserRoleAssignSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
 
-
-
-
-
-
-
-
-
-
-
-
-
 class OfficeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Office
         fields = ['id', 'title', 'phone', 'contact']
+
+
+
+class UserLoginSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email', 'last_login']  # Добавляем поле last_login
